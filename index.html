@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Singh Food | Homemade Food, Kolkata</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Hind:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#fbf4e6;--card:#fffaf0;--ink:#2e2418;--mute:#6b5b48;--orange:#d9641c;--orange-d:#b04c0f;--green:#3f6b3a;--line:#e7d9bd;--on-o:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1f1a13;--card:#2a231a;--ink:#f6ead3;--mute:#c4b394;--orange:#f08a40;--orange-d:#ffa86a;--green:#8fc084;--line:#42382a}}
+:root[data-theme="dark"]{--bg:#1f1a13;--card:#2a231a;--ink:#f6ead3;--mute:#c4b394;--orange:#f08a40;--orange-d:#ffa86a;--green:#8fc084;--line:#42382a}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Hind,system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2.2rem,7vw,3.8rem);font-weight:800}
+h2{font-size:clamp(1.7rem,4.5vw,2.4rem);font-weight:800}
+h3{font-size:1.2rem;font-weight:600}
+p{margin:0 0 1em;max-width:62ch}
+a{color:var(--orange-d)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+.notice{background:var(--green);color:#fff;text-align:center;padding:10px 16px;font-weight:600}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+.logo{font:800 1.3rem Fraunces,Georgia,serif;color:var(--orange-d);text-decoration:none}
+.nav nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav nav a{color:var(--ink);text-decoration:none;font-weight:500}
+.btn{display:inline-block;background:var(--orange);color:var(--on-o);border:0;border-radius:999px;padding:12px 24px;font:600 1rem Hind,sans-serif;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--orange-d)}
+.btn[aria-disabled="true"]{background:var(--line);color:var(--mute);cursor:not-allowed}
+.hero .wrap{display:grid;gap:32px;align-items:center}
+@media(min-width:800px){.hero .wrap{grid-template-columns:1.1fr .9fr}}
+.hero .tag{font:600 1.2rem Fraunces,Georgia,serif;color:var(--green);margin-bottom:.8em}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--green)}
+.hint{font-size:.9rem;color:var(--mute);margin-top:10px}
+.thali{width:100%;max-width:360px;margin:0 auto;display:block}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.card p{margin:0;color:var(--mute);flex:1}
+.price{font-weight:600;color:var(--green)}
+.card .btn{margin-top:10px;text-align:center;padding:10px 18px}
+.alt-bg{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ph{aspect-ratio:4/3;border-radius:14px;border:2px dashed var(--line);display:grid;place-items:center;text-align:center;color:var(--mute);padding:12px;background:var(--bg)}
+.ph b{display:block;font-size:2.2rem}
+.two{display:grid;gap:28px}
+@media(min-width:800px){.two{grid-template-columns:1fr 1fr}}
+ul.clean{list-style:none;padding:0;margin:0}
+ul.clean li{padding:10px 0;border-bottom:1px solid var(--line)}
+ul.clean li:last-child{border:0}
+dl{margin:0}dt{font-weight:600}dd{margin:0 0 14px;color:var(--mute)}
+.todo{font-style:italic}
+footer{padding:28px 0 90px;text-align:center;color:var(--mute);font-size:.95rem}
+.float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));box-shadow:0 4px 14px rgba(0,0,0,.25)}
+</style>
+</head>
+<body>
+<script>
+/* ===== EDIT THESE DETAILS ===== */
+const CONFIG = {
+  comingSoon: true,            // set to false when ready to open
+  whatsapp: "",                // digits only with country code, e.g. "91XXXXXXXXXX". Ordering stays off until filled.
+  phone: "", email: "", address: "", area: "",
+  hours: "Daily, 9:00 AM – 9:00 PM (to be confirmed)",
+  instagram: "",
+  delivery: "To be confirmed", pickup: "To be confirmed", deliveryCharge: "To be confirmed",
+  menu: [
+    {name:"Homemade Veg Thali", desc:"A full plate of dal, rice, roti, sabzi and more, cooked the way home does it.", price:""},
+    {name:"Dal, Rice and Roti", desc:"Simple everyday comfort: warm dal, steamed rice and fresh rotis.", price:""},
+    {name:"Seasonal Sabzi", desc:"Vegetables of the season, cooked in home-style masala.", price:""},
+    {name:"Homemade Snacks", desc:"Small bites for tea time and cravings.", price:""},
+    {name:"Special Homemade Meals", desc:"Made for occasions and bigger orders. Ask us about your plan.", price:""}
+  ]
+};
+</script>
+
+<div class="notice" id="notice" role="status" hidden>Coming soon! Singh Food is getting ready to open in Kolkata.</div>
+
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#top">Singh Food</a>
+  <nav aria-label="Main"><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#about">About</a><a href="#delivery">Delivery</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+  <div>
+    <h1>Singh Food</h1>
+    <p class="tag">Ghar Jaisa Swad, Har Bite Mein Pyaar</p>
+    <p>Fresh, homemade food from our kitchen to your table in Kolkata. Thali, dal, rice, roti, sabzi and snacks, made with care and easy to order.</p>
+    <div class="row"><a class="btn" href="#menu">See the menu</a><a class="btn wa" data-msg="Hello Singh Food, I would like to place an order.">Order on WhatsApp</a></div>
+    <p class="hint" id="waHint" hidden>WhatsApp ordering will open once we launch.</p>
+  </div>
+  <svg class="thali" viewBox="0 0 300 300" role="img" aria-label="Illustration of a homemade thali">
+    <circle cx="150" cy="150" r="140" fill="#cfd3d6"/><circle cx="150" cy="150" r="124" fill="#eceff1"/><circle cx="150" cy="150" r="112" fill="none" stroke="#b9bec2" stroke-width="2"/>
+    <circle cx="150" cy="82" r="30" fill="#c9941e"/><circle cx="150" cy="82" r="22" fill="#e8b93c"/>
+    <circle cx="222" cy="140" r="30" fill="#7a3b12"/><circle cx="222" cy="140" r="22" fill="#a4521a"/>
+    <circle cx="195" cy="215" r="30" fill="#2f5d2a"/><circle cx="195" cy="215" r="22" fill="#4b8a41"/>
+    <circle cx="105" cy="215" r="30" fill="#b3341d"/><circle cx="105" cy="215" r="22" fill="#d9532f"/>
+    <circle cx="78" cy="140" r="34" fill="#f7efd9" stroke="#e0d2ac" stroke-width="3"/><circle cx="70" cy="132" r="6" fill="#fff"/><circle cx="86" cy="144" r="7" fill="#fff"/><circle cx="76" cy="152" r="5" fill="#fff"/>
+    <circle cx="150" cy="150" r="30" fill="#e9a54a" stroke="#c4802a" stroke-width="3"/><circle cx="140" cy="142" r="3" fill="#b06a1c"/><circle cx="158" cy="156" r="3" fill="#b06a1c"/><circle cx="152" cy="140" r="2.5" fill="#b06a1c"/>
+  </svg>
+</div></section>
+
+<section id="menu" class="alt-bg"><div class="wrap">
+  <h2>Our menu</h2>
+  <p>Prices and daily availability will be confirmed before launch.</p>
+  <div class="grid" id="menuGrid"></div>
+</div></section>
+
+<section id="gallery"><div class="wrap">
+  <h2>Food gallery</h2>
+  <p>Photos of our food will be added here soon.</p>
+  <div class="grid" id="galGrid"></div>
+</div></section>
+
+<section id="about" class="alt-bg"><div class="wrap two">
+  <div>
+    <h2>About Singh Food</h2>
+    <p>Singh Food is a new homemade food business in Kolkata. We cook for one simple reason: food should taste like it came from home.</p>
+    <p>We focus on fresh cooking and easy ordering, so you can get a proper home meal without the hassle.</p>
+  </div>
+  <ul class="clean">
+    <li><b>Ghar jaisa swad.</b> Everyday flavours, cooked the home way.</li>
+    <li><b>Freshness.</b> Made for each order.</li>
+    <li><b>Easy ordering.</b> Message us on WhatsApp once we open.</li>
+  </ul>
+</div></section>
+
+<section id="delivery"><div class="wrap two">
+  <div>
+    <h2>Delivery and pickup</h2>
+    <p>We are finalising how we serve you. These details will be updated before launch.</p>
+  </div>
+  <dl id="delDl"></dl>
+</div></section>
+
+<section id="contact" class="alt-bg"><div class="wrap two">
+  <div>
+    <h2>Contact us</h2>
+    <p>Ready to order? Send us a message and tell us what you would like.</p>
+    <a class="btn wa" data-msg="Hello Singh Food, I would like to place an order.">Order on WhatsApp</a>
+  </div>
+  <dl id="contactDl"></dl>
+</div></section>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> Singh Food, Kolkata. Ghar Jaisa Swad, Har Bite Mein Pyaar.</div></footer>
+<a class="btn wa float" data-msg="Hello Singh Food, I would like to place an order.">WhatsApp</a>
+
+<script>
+(function(){
+  var C = CONFIG, num = String(C.whatsapp||"").replace(/\D/g,""), live = num.length >= 10;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  function link(m){return "https://wa.me/"+num+"?text="+encodeURIComponent(m)}
+  document.getElementById("notice").hidden = !C.comingSoon;
+  document.getElementById("yr").textContent = new Date().getFullYear();
+  // WhatsApp buttons: active only with a valid number and when not Coming Soon
+  var on = live && !C.comingSoon;
+  document.querySelectorAll(".wa").forEach(function(b){
+    if(on){b.href=link(b.dataset.msg);b.target="_blank";b.rel="noopener"}
+    else{b.setAttribute("aria-disabled","true");b.setAttribute("role","link");b.title="Ordering opens soon";b.addEventListener("click",function(e){e.preventDefault()});}
+  });
+  document.getElementById("waHint").hidden = on;
+  // Menu
+  document.getElementById("menuGrid").innerHTML = C.menu.map(function(m){
+    var p = m.price ? "₹"+esc(m.price) : "Price to be confirmed";
+    return '<article class="card"><h3>'+esc(m.name)+'</h3><p>'+esc(m.desc)+'</p><div class="price">'+p+'</div><a class="btn wa2" '+(on?'href="'+link("Hello Singh Food, I would like to order: "+m.name)+'" target="_blank" rel="noopener"':'aria-disabled="true" role="link" title="Ordering opens soon"')+'>'+(on?"Order this":"Ordering opens soon")+'</a></article>';
+  }).join("");
+  // Gallery placeholders
+  var ph=[["🍛","Veg thali"],["🫓","Fresh rotis"],["🥘","Seasonal sabzi"],["🥟","Homemade snacks"]];
+  document.getElementById("galGrid").innerHTML = ph.map(function(x){return '<div class="ph"><div><b aria-hidden="true">'+x[0]+'</b>'+x[1]+'<br>Photo coming soon</div></div>'}).join("");
+  // Delivery and contact
+  function row(k,v,fmt){return '<dt>'+k+'</dt><dd'+(v?'':' class="todo"')+'>'+(v?(fmt?fmt(v):esc(v)):"To be added")+'</dd>'}
+  document.getElementById("delDl").innerHTML = row("Home delivery",C.delivery)+row("Delivery charges",C.deliveryCharge)+row("Customer pickup",C.pickup)+row("Service area",C.area||"Kolkata (exact areas to be added)");
+  document.getElementById("contactDl").innerHTML =
+    row("Phone",C.phone,function(v){return '<a href="tel:'+esc(v.replace(/[^\d+]/g,""))+'">'+esc(v)+'</a>'})+
+    row("Email",C.email,function(v){return '<a href="mailto:'+esc(v)+'">'+esc(v)+'</a>'})+
+    row("Address",C.address)+row("Hours",C.hours)+
+    (C.instagram?row("Instagram",C.instagram,function(v){return '<a href="https://instagram.com/'+esc(v.replace("@",""))+'" target="_blank" rel="noopener">@'+esc(v.replace("@",""))+'</a>'}):"");
+})();
+</script>
+</body>
+</html>
